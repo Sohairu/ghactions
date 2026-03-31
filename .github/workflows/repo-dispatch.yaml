@@ -1,0 +1,10 @@
+on:
+  repository_dispatch:
+    types: [generate_report]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Report
+        run: echo "Report Generated"
