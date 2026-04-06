@@ -1,0 +1,23 @@
+name: Greeting on variable day
+
+on:
+  workflow_dispatch
+
+env:
+  Day: 7
+  Month: April
+
+jobs:
+  greeting_job:
+    runs-on: ubuntu-latest
+    env:
+      Day: 8
+      Greeting: Hello
+      Month: March
+    steps:
+      - name: Greet
+        run: echo "$Greeting $First_Name. Today is $Day of $Month!"
+        env:
+          First_Name: Ahmad
+          Greeting: Salam
+          Month: May  
