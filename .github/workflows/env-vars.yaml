@@ -44,7 +44,7 @@ jobs:
           import os
 
           msg = "{} {}. Today is {} of {}!"
-          print(msg.format(os.getenv("Greeting"), os.getenv("First_Name"), os.getenv("Day"), os.getenv("Month"))
+          print(msg.format(os.getenv("Greeting"), os.getenv("First_Name"), os.getenv("Day"), os.getenv("Month")))
         shell: python
         env:
           First_Name: Ahmad
