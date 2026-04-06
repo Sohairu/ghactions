@@ -20,4 +20,33 @@ jobs:
         env:
           First_Name: Ahmad
           Greeting: Salam
-          Month: May  
+          Month: May
+
+  greeting_job_win:
+    runs-on: windows-latest
+    env:
+      Greeting: Hello
+    steps:
+      - name: Greet
+        run: echo "$env:Greeting $env:First_Name. Today is $env:Day of $env:Month!"
+        env:
+          First_Name: Ahmad
+          Greeting: Salam
+          Month: May
+
+  greeting_job_python:
+    runs-on: windows-latest
+    env:
+      Greeting: Hello
+    steps:
+      - name: Greet
+        run: |
+          import os
+
+          msg = "{} {}. Today is {} of {}!"
+          print(msg.format(os.getenv("Greeting"), os.getenv("First_Name"), os.getenv("Day"), os.getenv("Month"))
+        shell: python
+        env:
+          First_Name: Ahmad
+          Greeting: Salam
+          Month: May
